@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f1e6">
+  <meta name="description" content="The wedding invitation of Hema P Jadav and Nitish V Todkar.">
+  <title>Hema & Nitish — Our Beginning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Great+Vibes&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Ambient controls -->
+  <div class="top-controls">
+    <button id="soundBtn" class="icon-btn" aria-label="Toggle sound">♫</button>
+    <button id="shareBtn" class="icon-btn" aria-label="Share invitation">↗</button>
+  </div>
+
+  <!-- AUDIO: put your own mp3 in assets/wedding-music.mp3 if desired -->
+  <audio id="weddingMusic" loop preload="none">
+    <source src="assets/wedding-music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- ===================== OPENING ===================== -->
+  <section id="opening" class="opening-screen">
+    <div class="door-stage" id="doorStage">
+
+      <div class="door-background">
+        <img src="assets/couple-back-pose.png" alt="Bride and groom from behind">
+        <div class="door-vignette"></div>
+      </div>
+
+      <div class="door-frame">
+        <div class="door-leaf door-left">
+          <div class="leaf-pattern">❈</div>
+          <div class="leaf-inner"></div>
+          <span class="leaf-handle"></span>
+        </div>
+
+        <div class="door-leaf door-right">
+          <div class="leaf-pattern">❈</div>
+          <div class="leaf-inner"></div>
+          <span class="leaf-handle"></span>
+        </div>
+
+        <div class="opening-copy">
+          <div class="mandala">✦</div>
+          <span class="micro">॥ शुभ विवाह ॥</span>
+          <h2>A new chapter<br><em>begins here.</em></h2>
+          <p>Hema P Jadav <span>&amp;</span> Nitish V Todkar</p>
+          <button id="openInvitation" class="gold-btn">
+            OPEN OUR STORY <span>♡</span>
+          </button>
+          <small>Tap to open</small>
+        </div>
+
+        <div class="edge-flower edge-left">✿</div>
+        <div class="edge-flower edge-right">✿</div>
+      </div>
+
+      <div class="swipe-hint">Swipe up or tap to open ↑</div>
+    </div>
+  </section>
+
+  <!-- ===================== INVITATION ===================== -->
+  <main id="mainInvitation" class="main hidden">
+
+    <section class="hero-story reveal">
+      <div class="hero-photo">
+        <img src="assets/couple-back-pose.png" alt="Bride and groom">
+        <div class="hero-photo-shade"></div>
+      </div>
+      <div class="hero-copy">
+        <span class="micro">A JOURNEY OF TWO HEARTS</span>
+        <h1>Hema <span>&amp;</span><br>Nitish</h1>
+        <p>With the blessings of our families, we invite you to be part of our beautiful beginning.</p>
+        <div class="date-mark">28 <i>·</i> 29 <small>OCTOBER 2026</small></div>
+      </div>
+      <div class="scroll-mark">SCROLL <span>↓</span></div>
+    </section>
+
+    <section class="chapter reveal">
+      <div class="chapter-number">01</div>
+      <div class="chapter-content">
+        <span class="micro">THE INVITATION</span>
+        <h2>Two paths.<br><em>One beautiful journey.</em></h2>
+        <p>
+          Together with their families,<br>
+          <strong>Hema P Jadav &amp; Nitish V Todkar</strong><br>
+          cordially invite you to celebrate the beginning of their new chapter.
+        </p>
+        <div class="line-ornament">— ✦ —</div>
+        <p class="small-quote">“Your presence and blessings are our greatest gift.”</p>
+      </div>
+    </section>
+
+    <section class="events reveal">
+      <div class="chapter-number">02</div>
+      <div class="section-heading">
+        <span class="micro">SAVE THE DATES</span>
+        <h2>The Celebrations</h2>
+      </div>
+
+      <div class="event-grid">
+        <article class="event-card">
+          <span class="event-index">01</span>
+          <p>28 OCTOBER 2026</p>
+          <h3>7:30 <small>PM onwards</small></h3>
+          <div class="event-line"></div>
+          <span>Our first celebration</span>
+        </article>
+
+        <article class="event-card featured">
+          <span class="event-index">02</span>
+          <p>29 OCTOBER 2026</p>
+          <h3>8:45 <small>AM onwards</small></h3>
+          <div class="event-line"></div>
+          <span>And the journey continues</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="venue reveal">
+      <div class="venue-card">
+        <span class="micro">03 / THE DESTINATION</span>
+        <h2>Meet us<br><em>where memories begin.</em></h2>
+        <div class="venue-symbol">⌖</div>
+        <h3>Sri Manjunathaswamy<br>Kalyana Mantapa</h3>
+        <p>Near KSRTC Bus Stand,<br>B.H. Road, Bhadravathi</p>
+
+        <div class="venue-actions">
+          <a class="gold-btn dark" target="_blank"
+             href="https://www.google.com/maps/search/?api=1&query=Sri+Manjunathaswamy+Kalyana+Mantapa+Near+KSRTC+Bus+Stand+B.H.+Road+Bhadravathi">
+             OPEN MAP ↗
+          </a>
+          <button id="calendarBtn" class="outline-btn">ADD TO CALENDAR +</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="countdown-section reveal">
+      <span class="micro">THE WAIT</span>
+      <h2>Counting down to<br><em>our forever.</em></h2>
+
+      <div class="countdown">
+        <div><strong id="days">00</strong><span>Days</span></div>
+        <div><strong id="hours">00</strong><span>Hours</span></div>
+        <div><strong id="minutes">00</strong><span>Minutes</span></div>
+        <div><strong id="seconds">00</strong><span>Seconds</span></div>
+      </div>
+    </section>
+
+    <!-- Modern interactive memory strip -->
+    <section class="memory reveal">
+      <div class="memory-copy">
+        <span class="micro">A LITTLE MAGIC</span>
+        <h2>Made with love,<br><em>for our favourite people.</em></h2>
+        <p>Move your finger across the card. The invitation reacts to you.</p>
+      </div>
+      <div class="tilt-card" id="tiltCard">
+        <div class="tilt-glow"></div>
+        <img src="assets/couple-back-pose.png" alt="Wedding couple">
+        <div class="tilt-caption">HEMA <span>♡</span> NITISH</div>
+      </div>
+    </section>
+
+    <!-- ===================== CLOSING ===================== -->
+    <section id="closing" class="closing reveal">
+      <div class="closing-bg">
+        <img src="assets/couple-back-pose.png" alt="">
+      </div>
+
+      <div class="closing-copy">
+        <span class="micro">04 / UNTIL THEN</span>
+        <h2>We can't wait<br><em>to celebrate with you.</em></h2>
+        <p>With love &amp; happiness</p>
+        <h3>Hema &amp; Nitish</h3>
+        <button id="closeStory" class="gold-btn dark">CLOSE OUR STORY ♡</button>
+      </div>
+
+      <!-- Two visual halves move together before the doors close -->
+      <div class="couple-together" aria-hidden="true">
+        <div class="couple-half bride-half">
+          <img src="assets/couple-back-pose.png" alt="">
+        </div>
+        <div class="couple-half groom-half">
+          <img src="assets/couple-back-pose.png" alt="">
+        </div>
+      </div>
+
+      <div class="closing-door closing-door-left"></div>
+      <div class="closing-door closing-door-right"></div>
+
+      <div id="finalCard" class="final-card">
+        <div class="mandala">✦</div>
+        <span class="micro">THANK YOU</span>
+        <h2>Until we meet,<br><em>keep this date close.</em></h2>
+        <p>28 · 29 October 2026</p>
+        <strong>Hema P Jadav &amp; Nitish V Todkar</strong>
+        <button id="openAgain" class="outline-btn">OPEN AGAIN ↗</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast">Invitation link copied!</div>
+  <script src="script.js"></script>
+</body>
+</html>
